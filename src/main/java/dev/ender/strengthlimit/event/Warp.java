@@ -13,7 +13,10 @@ public class Warp implements Listener {
     @EventHandler
     public void onPlayerWrap(PlayerCommandPreprocessEvent event) {
         String targetWarp = event.getMessage().replace("/warp ", "");
+//        getLogger().info(event.getMessage());
+//        getLogger().info(targetWarp);
         for (String warp : Config.getCostingWarpList()) {
+//            getLogger().info(String.valueOf(Config.getCostingWarpList()));
             if (warp.equals(targetWarp)) {
                 Strength strength = new Strength(event.getPlayer());
                 if (!strength.isEnough()) {

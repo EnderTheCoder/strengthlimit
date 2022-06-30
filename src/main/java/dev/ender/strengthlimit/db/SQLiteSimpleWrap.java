@@ -2,7 +2,8 @@ package dev.ender.strengthlimit.db;
 
 import java.sql.*;
 
-import static net.minecraft.server.v1_7_R4.MinecraftServer.getLogger;
+import static org.bukkit.Bukkit.getLogger;
+
 
 public class SQLiteSimpleWrap {
     private Connection connection = null;
@@ -17,7 +18,7 @@ public class SQLiteSimpleWrap {
             //如果没有数据库文件的话会自动创建
             this.connection = DriverManager.getConnection("jdbc:sqlite:./plugins/StrengthLimit/main.db");
         } catch (Exception e) {
-            getLogger().error(e.getClass().getName() + ": " + e.getMessage());
+            getLogger().severe(e.getClass().getName() + ": " + e.getMessage());
         }
     }
 
@@ -25,7 +26,7 @@ public class SQLiteSimpleWrap {
         try {
             if (this.connection == null || !this.connection.isValid(1000)) connect();
         } catch (SQLException e) {
-            getLogger().error("获取数据库连接时发生错误");
+            getLogger().severe("获取数据库连接时发生错误");
 
             e.printStackTrace();
         }
@@ -36,7 +37,7 @@ public class SQLiteSimpleWrap {
         try {
             statement = getConnection().prepareStatement(sql);
         } catch (SQLException e) {
-            getLogger().error("预处理SQL语句时发生错误");
+            getLogger().severe("预处理SQL语句时发生错误");
             e.printStackTrace();
         }
     }
@@ -45,7 +46,7 @@ public class SQLiteSimpleWrap {
         try {
             statement.setString(number, value);
         } catch (SQLException e) {
-            getLogger().error("绑定参数时时发生错误");
+            getLogger().severe("绑定参数时时发生错误");
             e.printStackTrace();
         }
     }
@@ -54,7 +55,7 @@ public class SQLiteSimpleWrap {
         try {
             statement.setInt(number, value);
         } catch (SQLException e) {
-            getLogger().error("绑定参数时时发生错误");
+            getLogger().severe("绑定参数时时发生错误");
             e.printStackTrace();
         }
 
@@ -64,7 +65,7 @@ public class SQLiteSimpleWrap {
         try {
             statement.setDouble(number, value);
         } catch (SQLException e) {
-            getLogger().error("绑定参数时时发生错误");
+            getLogger().severe("绑定参数时时发生错误");
             e.printStackTrace();
         }
     }
@@ -73,7 +74,7 @@ public class SQLiteSimpleWrap {
         try {
             statement.setLong(number, value);
         } catch (SQLException e) {
-            getLogger().error("绑定参数时时发生错误");
+            getLogger().severe("绑定参数时时发生错误");
             e.printStackTrace();
         }
     }
@@ -82,7 +83,7 @@ public class SQLiteSimpleWrap {
         try {
             statement.execute();
         } catch (SQLException e) {
-            getLogger().error("执行SQL语句时发生错误");
+            getLogger().severe("执行SQL语句时发生错误");
             e.printStackTrace();
         }
     }
@@ -91,7 +92,7 @@ public class SQLiteSimpleWrap {
         try {
             return statement.getResultSet();
         } catch (SQLException e) {
-            getLogger().error("获取数据库查询结果时发生错误");
+            getLogger().severe("获取数据库查询结果时发生错误");
             e.printStackTrace();
             return null;
         }
@@ -102,12 +103,12 @@ public class SQLiteSimpleWrap {
         Timestamp endTime = new Timestamp(System.currentTimeMillis());
 
 //        if (ConfigReader.isOnDebug())
-            getLogger().info(String.format("数据库连接关闭，本次查询共用时%s毫秒", endTime.getTime() - startTime.getTime()));
+//            getLogger().info(String.format("数据库连接关闭，本次查询共用时%s毫秒", endTime.getTime() - startTime.getTime()));
 
         try {
             this.connection.close();
         } catch (SQLException e) {
-            getLogger().error("关闭数据库连接时发生错误");
+            getLogger().severe("关闭数据库连接时发生错误");
             e.printStackTrace();
         }
     }

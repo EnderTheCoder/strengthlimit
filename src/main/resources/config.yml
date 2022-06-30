@@ -17,3 +17,5 @@ warp_success_message: "[体力]成功前往目标副本，剩余体力值%体力
 reset_success_message: "[体力]重置体力成功！"
 # 重置失败时提示信息
 reset_fail_message: "[体力]今日已经重置过体力了!请明日再来"
+# 添加成功时提示信息
+add_success_message: "[体力]成功为玩家%玩家%增加体力%体力%点"
