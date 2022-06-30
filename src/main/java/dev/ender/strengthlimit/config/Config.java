@@ -2,6 +2,7 @@ package dev.ender.strengthlimit.config;
 
 import dev.ender.strengthlimit.StrengthLimit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +25,13 @@ public class Config {
 
     public static String getMessage(String messageKey) {
         return config.getString(messageKey);
+    }
+
+    public static String getWarpBack() {
+        return config.getString("teleport_back_warp");
+    }
+
+    public static int getTimeout() {
+        return config.getInt("warp_timeout");
     }
 }

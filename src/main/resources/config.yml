@@ -4,6 +4,10 @@ costs: 10
 vip_max_strength: 120
 # 默认权限组体力值上限
 default_max_strength: 100
+# 副本超时后返回的主城传送点
+teleport_back_warp: abc
+# 副本超时时间，单位是秒
+warp_timeout: 1000
 # 要收费的传送点名字
 warps:
   - "a"
@@ -19,3 +23,5 @@ reset_success_message: "[体力]重置体力成功！"
 reset_fail_message: "[体力]今日已经重置过体力了!请明日再来"
 # 添加成功时提示信息
 add_success_message: "[体力]成功为玩家%玩家%增加体力%体力%点"
+# 超时返回主城时提示信息
+timeout_message: "[体力]你已经超时，正在传送回主城"
