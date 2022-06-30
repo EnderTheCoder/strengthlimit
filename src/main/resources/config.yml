@@ -1,0 +1,19 @@
+# 每次传送体力值花费
+costs: 10
+# VIP权限组体力上限
+vip_max_strength: 120
+# 默认权限组体力值上限
+default_max_strength: 100
+# 要收费的传送点名字
+warps:
+  - "a"
+  - "b"
+  - "c"
+# 失败时提示的消息
+warp_fail_message: "[体力]你的体力值不足以前往该副本, 剩余体力值%体力%"
+# 成功时提示的消息
+warp_success_message: "[体力]成功前往目标副本，剩余体力值%体力%"
+# 重置成功时提示信息
+reset_success_message: "[体力]重置体力成功！"
+# 重置失败时提示信息
+reset_fail_message: "[体力]今日已经重置过体力了!请明日再来"

@@ -1,0 +1,21 @@
+name: StrengthLimit
+main: dev.ender.strengthlimit.StrengthLimit
+version: 1.0
+
+commands:
+  resetstrength:
+    aliases: rs
+    permission: strengthlimit.reset
+  setstrength:
+    aliases: ss
+    permission: strengtthlimit.set
+permissions:
+  strengthlimit.reset:
+    default: true
+    description: 重置体力权限
+  strengtthlimit.set:
+    default: op
+    description: 设置体力权限
+  strengtthlimit.vip:
+    default: false
+    description: VIP体力权限
