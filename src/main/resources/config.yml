@@ -4,8 +4,6 @@ costs: 10
 vip_max_strength: 120
 # 默认权限组体力值上限
 default_max_strength: 100
-# 副本超时后返回的主城传送点
-teleport_back_warp: abc
 # 副本超时时间，单位是秒
 warp_timeout: 1000
 # 要收费的传送点名字

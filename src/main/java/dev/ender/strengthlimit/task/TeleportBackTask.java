@@ -33,7 +33,7 @@ public class TeleportBackTask extends TimerTask {
 
         if (player.isOnline()) {
             player.sendMessage(Config.getMessage("timeout_message"));
-            player.performCommand("/warp " + Config.getWarpBack());
+            player.performCommand("spawn");
         }
         Warp.teleportTaskMap.put(this.player, null);
     }
