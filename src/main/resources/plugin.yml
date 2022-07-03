@@ -15,9 +15,9 @@ permissions:
   strengthlimit.reset:
     default: true
     description: 重置体力权限
-  strengtthlimit.add:
+  strengthlimit.add:
     default: op
     description: 增加体力权限
-  strengtthlimit.vip:
+  strengthlimit.vip:
     default: false
     description: VIP体力权限

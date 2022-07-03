@@ -16,6 +16,6 @@ A bukkit plugin for minecraft 1.7.10 used for set up strength limits in RPG serv
 ## 权限节点
 strengthlimit.reset: 重置体力权限 默认所有人拥有
 
-strengtthlimit.add: 增加体力权限 默认OP权限
+strengthlimit.add: 增加体力权限 默认OP权限
 
-strengtthlimit.vip: VIP体力权限 默认无人拥有
+strengthlimit.vip: VIP体力权限 默认无人拥有
