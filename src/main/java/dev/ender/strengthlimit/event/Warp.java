@@ -11,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Timer;
 
 public class Warp implements Listener {
@@ -21,6 +22,11 @@ public class Warp implements Listener {
     public void onPlayerWrap(PlayerCommandPreprocessEvent event) {
         String command = event.getMessage().toLowerCase();
         if (!command.contains("/warp")) return;
+        else if (!Objects.equals(event.getMessage(), command)) {
+            event.setCancelled(true);
+            event.getPlayer().sendMessage("[strengthlimit]Invalid command for warp. You shouldn't use uppercase in your warp command.");
+            return;
+        }
         String targetWarp = command.replace("/warp ", "");
         for (String warp : Config.getCostingWarpList()) {
             if (warp.equals(targetWarp)) {
